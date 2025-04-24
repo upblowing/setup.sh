@@ -1,0 +1,54 @@
+if [ "$EUID" -ne 0 ]
+then
+echo "run as root"
+exit 1
+fi
+
+if [ -f /etc/debian_version ]; then
+    pkg="apt"
+    update="apt update"
+    install="apt install -y"
+elif [ -f /etc/redhat-release ]; then
+    pkg="yum" 
+    update="yum update -y"
+    install="yum install -y"
+elif [ -f /etc/arch-release ]; then
+    pkg="pacman"
+    update="pacman -Syu --noconfirm"
+    install="pacman -S --noconfirm"
+else
+    echo "unsuported distro"
+    exit 1
+fi
+
+$update
+
+case $pkg in
+    "apt")
+        $install build-essential git curl wget neofetch python3-pip nodejs npm htop vim tmux ffmpeg imagemagick unzip zip jq
+        ;;
+    "yum")
+        $install gcc make git curl wget neofetch python3-pip nodejs npm htop vim tmux ffmpeg ImageMagick unzip zip jq
+        ;;
+    "pacman")
+        $install base-devel git curl wget neofetch python-pip nodejs npm htop vim tmux ffmpeg imagemagick unzip zip jq
+        ;;
+esac
+
+clear
+neofetch
+echo ""
+echo "    /\__/\    "
+echo "   /\`    '\   "  
+echo " === 0  0 ===="
+echo "   \  --  /   "
+echo "  /        \  "
+echo " /          \ "
+echo "|            |"
+echo " \  ||  ||  / "
+echo "  \_oo__oo_/  "
+echo ""
+echo "installation done ~.~"
+echo ""
+
+exit 0
