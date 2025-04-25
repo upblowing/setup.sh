@@ -19,3 +19,5 @@ sudo ./setup.sh
 - debian/ubuntu
 - fedora/rhel/centos
 - arch
+- MacOS
+- CubeOS
