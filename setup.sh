@@ -52,17 +52,8 @@ esac
 clear
 neofetch
 echo ""
-echo "    /\__/\    "
-echo "   /\`    '\   "  
-echo " === 0  0 ===="
-echo "   \  --  /   "
-echo "  /        \  "
-echo " /          \ "
-echo "|            |"
-echo " \  ||  ||  / "
-echo "  \_oo__oo_/  "
+echo "     (\__/)"
+echo "     (o.o )"
+echo "     (> < ) Bunny says installation done ~.~"
 echo ""
-echo "installation done ~.~"
-echo ""
-
 exit 0
