@@ -16,8 +16,9 @@ sudo ./setup.sh
 ```
 
 ## supported distros
-- debian/ubuntu
-- fedora/rhel/centos
-- arch
-- MacOS
-- CubeOS
+- Debian/Ubuntu  
+- Fedora/RHEL/CentOS  
+- Arch  
+- macOS  
+- CubeOS  
+- Alpine  
